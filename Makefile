@@ -11,6 +11,11 @@ ocean_hgrid.nc ocean_mask.nc:
 seawifs-clim-1997-2010.720x576.v20180328.nc: seawifs-clim-1997-2010.nc ocean_hgrid.nc ocean_mask.nc
 	./interp_and_fill/interp_and_fill.py ocean_hgrid.nc ocean_mask.nc seawifs-clim-1997-2010.nc chlor_a --fms $@
 
+seawifs-clim-1997-2010.nc:
+	wget ftp://ftp.gfdl.noaa.gov/home/aja/datasets/seawifs-clim-1997-2010.nc.gz
+	gunzip $@.gz
+	md5sum -c $@.md5
+
 hash.md5: | $(TARGS)
 	md5sum $(TARGS) > $@
 

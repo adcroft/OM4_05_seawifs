@@ -13,7 +13,4 @@ build:
   tags:
     - pan
   script:
-    # Fetched some files from archive which are unobtainable through the firewall
-    - cp -n /archive/gold/datasets/obs/SeaWiFS/fill_ocean_color/seawifs-clim-1997-2010.nc  .
-    # Make everything
     - make
