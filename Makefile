@@ -5,7 +5,7 @@ all: $(TARGS) hash.md5
 	md5sum -c hash.md5
 
 ocean_hgrid.nc ocean_mask.nc:
-	wget -nv fftp://ftp.gfdl.noaa.gov/perm/Alistair.Adcroft/MOM6-testing/OM4_05/$@
+	wget -nv ftp://ftp.gfdl.noaa.gov/perm/Alistair.Adcroft/MOM6-testing/OM4_05/$@
 	md5sum -c $@.md5
 
 seawifs-clim-1997-2010.720x576.v20180328.nc: seawifs-clim-1997-2010.nc ocean_hgrid.nc ocean_mask.nc
